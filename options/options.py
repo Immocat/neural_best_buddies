@@ -10,7 +10,7 @@ class Options():
 
     def initialize(self):
         self.parser.add_argument('--datarootA', required=True, help='path to image A')
-        self.parser.add_argument('--datarootB', required=True, help='path to image A')
+        self.parser.add_argument('--datarootB', required=True, help='path to image B')
         self.parser.add_argument('--imageSize', type=int, default=224, help='rescale the image to this size')
         self.parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
         self.parser.add_argument('--tau', type=float, default=0.05, help='response threshold')
