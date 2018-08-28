@@ -92,7 +92,7 @@ class vgg19(nn.Module):
             deconvolved_feature_forward = self.forward(level=src_level, start_level=dst_level, set_as_var = False)
             loss_perceptual = criterionPerceptual(deconvolved_feature_forward, src_layer)
             loss_perceptual.backward()
-            error = loss_perceptual.data[0]
+            error = loss_perceptual.item()
             self.update_last_losses(error)
             if (i % 3 == 0) and (print_errors == True):
                 print("error: ", error)
